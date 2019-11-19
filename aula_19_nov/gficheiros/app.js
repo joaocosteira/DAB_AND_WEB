@@ -4,6 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+/*
+
+Incompleto
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://127:0.0.1:27017/ficheirosDAW2019',{
+  userNewUrlParser: true,userUnifiedTopology
+})
+.then(()=>)
+.catch(erro=>)
+*/
 var ficheirosRouter = require('./routes/index');
 var apiRouter = require('./routes/users');
 
@@ -16,7 +27,6 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', ficheirosRouter);
